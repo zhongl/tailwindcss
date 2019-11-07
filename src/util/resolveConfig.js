@@ -115,7 +115,7 @@ function extractPluginConfigs(configs) {
 }
 
 export default function resolveConfig(configs) {
-  const allConfigs = extractPluginConfigs(configs)
+  const allConfigs = extractPluginConfigs([...configs].reverse())
 
   return defaults(
     {
