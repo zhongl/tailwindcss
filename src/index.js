@@ -57,6 +57,10 @@ const getConfigFunction = config => () => {
 
   const configObject = _.isObject(config) ? _.get(config, 'config', config) : require(config)
 
+  if (Array.isArray(configObject)) {
+    return resolveConfig([defaultConfig, ...configObject])
+  }
+
   return resolveConfig([defaultConfig, configObject])
 }
 

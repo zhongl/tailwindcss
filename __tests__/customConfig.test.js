@@ -197,12 +197,89 @@ test('tailwind.config.js is picked up by default when passing an empty object', 
         { from: undefined }
       )
       .then(result => {
-        expect(result.css).toMatchCss(`
+        return expect(result.css).toMatchCss(`
           .foo {
             color: blue;
           }
           @media (min-width: 400px) {
             .mobile\\:foo {
+              color: blue;
+            }
+          }
+        `)
+      })
+  })
+})
+
+test('config can be specified as an array where all configs are resolved on top of the default config', () => {
+  return inTempDirectory(() => {
+    fs.writeFileSync(
+      path.resolve(defaultConfigFile),
+      `module.exports = [
+        {
+          theme: {
+            extend: {
+              screens: {
+                xxl: '1440px',
+              },
+            }
+          },
+        },
+        {
+          theme: {
+            extend: {
+              screens: {
+                xxxl: '1600px',
+              },
+            }
+          },
+        },
+      ]`
+    )
+
+    return postcss([tailwind({})])
+      .process(
+        `
+          @responsive {
+            .foo {
+              color: blue;
+            }
+          }
+        `,
+        { from: undefined }
+      )
+      .then(result => {
+        return expect(result.css).toMatchCss(`
+          .foo {
+            color: blue;
+          }
+          @media (min-width: 640px) {
+            .sm\\:foo {
+              color: blue;
+            }
+          }
+          @media (min-width: 768px) {
+            .md\\:foo {
+              color: blue;
+            }
+          }
+          @media (min-width: 1024px) {
+            .lg\\:foo {
+              color: blue;
+            }
+          }
+          @media (min-width: 1280px) {
+            .xl\\:foo {
+              color: blue;
+            }
+          }
+          @media (min-width: 1440px) {
+            .xxl\\:foo {
+              color: blue;
+            }
+          }
+          @media (min-width: 1600px) {
+            .xxxl\\:foo {
               color: blue;
             }
           }
