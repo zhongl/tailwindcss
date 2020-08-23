@@ -69,7 +69,7 @@ test('purges unused classes', () => {
   return postcss([
     tailwind({
       ...config,
-      purge: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+      purge: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
     }),
   ])
     .process(input, { from: inputPath })
@@ -90,7 +90,7 @@ test('purges unused classes with important string', () => {
     tailwind({
       ...config,
       important: '#tailwind',
-      purge: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+      purge: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
     }),
   ])
     .process(input, { from: inputPath })
@@ -110,7 +110,7 @@ test('does not purge components', () => {
   return postcss([
     tailwind({
       ...config,
-      purge: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+      purge: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
     }),
   ])
     .process(input, { from: inputPath })
@@ -131,7 +131,7 @@ test('does not purge except in production', () => {
   return postcss([
     tailwind({
       ...defaultConfig,
-      purge: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+      purge: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
     }),
   ])
     .process(input, { from: inputPath })
@@ -227,7 +227,7 @@ test('purges outside of production if explicitly enabled', () => {
   return postcss([
     tailwind({
       ...config,
-      purge: { enabled: true, content: [path.resolve(`${__dirname}/fixtures/**/*.html`)] },
+      purge: { enabled: true, content: [path.resolve(`${__dirname}/fixtures/purge-example.html`)] },
     }),
   ])
     .process(input, { from: inputPath })
@@ -248,7 +248,7 @@ test('purgecss options can be provided', () => {
       purge: {
         enabled: true,
         options: {
-          content: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+          content: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
           whitelist: ['md:bg-green-500'],
         },
       },
@@ -271,7 +271,7 @@ test('can purge all CSS, not just Tailwind classes', () => {
       purge: {
         enabled: true,
         mode: 'all',
-        content: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+        content: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
       },
     }),
     function(css) {
@@ -304,7 +304,7 @@ test('the `conservative` mode can be set explicitly', () => {
       ...config,
       purge: {
         mode: 'conservative',
-        content: [path.resolve(`${__dirname}/fixtures/**/*.html`)],
+        content: [path.resolve(`${__dirname}/fixtures/purge-example.html`)],
       },
     }),
   ])
@@ -336,5 +336,60 @@ test('the `conservative` mode can be set explicitly', () => {
       expect(result.css).toContain('.col-span-2')
       expect(result.css).toContain('.col-span-1')
       expect(result.css).toContain('.text-center')
+    })
+})
+
+test('dynamic classes can be used safely using class hints', () => {
+  const OLD_NODE_ENV = process.env.NODE_ENV
+  process.env.NODE_ENV = 'production'
+  const inputPath = path.resolve(`${__dirname}/fixtures/tailwind-input.css`)
+  const input = fs.readFileSync(inputPath, 'utf8')
+
+  return postcss([
+    tailwind({
+      ...config,
+      purge: [path.resolve(`${__dirname}/fixtures/purge-example-dynamic.html`)],
+    }),
+    function(css) {
+      // Remove any comments to avoid accidentally asserting against them
+      // instead of against real CSS rules.
+      css.walkComments(c => c.remove())
+    },
+  ])
+    .process(input, { from: inputPath })
+    .then(result => {
+      expect(result.css).toContain('.bg-red-100')
+      expect(result.css).toContain('.bg-red-200')
+      expect(result.css).toContain('.bg-red-300')
+      expect(result.css).toContain('.bg-red-400')
+      expect(result.css).toContain('.bg-red-500')
+      expect(result.css).toContain('.bg-red-600')
+      expect(result.css).toContain('.bg-red-700')
+      expect(result.css).toContain('.bg-red-800')
+      expect(result.css).toContain('.bg-red-900')
+      expect(result.css).toContain('.bg-blue-100')
+      expect(result.css).toContain('.bg-blue-200')
+      expect(result.css).toContain('.bg-blue-300')
+      expect(result.css).toContain('.bg-blue-400')
+      expect(result.css).toContain('.bg-blue-500')
+      expect(result.css).toContain('.bg-blue-600')
+      expect(result.css).toContain('.bg-blue-700')
+      expect(result.css).toContain('.bg-blue-800')
+      expect(result.css).toContain('.bg-blue-900')
+      expect(result.css).toContain('.bg-yellow-100')
+      expect(result.css).toContain('.bg-yellow-200')
+      expect(result.css).toContain('.bg-yellow-300')
+      expect(result.css).toContain('.bg-yellow-400')
+      expect(result.css).toContain('.bg-yellow-500')
+      expect(result.css).toContain('.bg-yellow-600')
+      expect(result.css).toContain('.bg-yellow-700')
+      expect(result.css).toContain('.bg-yellow-800')
+      expect(result.css).toContain('.bg-yellow-900')
+
+      expect(result.css).toContain('.flex')
+      expect(result.css).toContain('.sm\\:flex')
+      expect(result.css).toContain('.md\\:flex')
+      expect(result.css).toContain('.lg\\:flex')
+      expect(result.css).toContain('.xl\\:flex')
     })
 })

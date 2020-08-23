@@ -2,6 +2,7 @@ import _ from 'lodash'
 import postcss from 'postcss'
 import purgecss from '@fullhuman/postcss-purgecss'
 import log from '../util/log'
+import flattenColorPalette from '../util/flattenColorPalette'
 
 function removeTailwindMarkers(css) {
   css.walkAtRules('tailwind', rule => rule.remove())
@@ -75,7 +76,39 @@ export default function purgeUnusedUtilities(config, configChanged) {
         // Capture classes within other delimiters like .block(class="w-1/2") in Pug
         const innerMatches = content.match(/[^<>"'`\s.(){}[\]#=%]*[^<>"'`\s.(){}[\]#=%:]/g) || []
 
-        return broadMatches.concat(innerMatches)
+        const allMatches = _.flatMap(broadMatches.concat(innerMatches), className => {
+          let match
+
+          if (!(match = className.match(/.*{(.+)}.*/))) {
+            return className
+          }
+
+          const [_className, themeKey] = match
+
+          function flattenThemeKeys(themeObject) {
+            if (!_.isPlainObject(themeObject)) {
+              return []
+            }
+
+            return _.flatMap(Object.keys(themeObject), key => {
+              if (_.isPlainObject(themeObject[key])) {
+                return flattenThemeKeys(themeObject[key]).map(childKey => `${key}-${childKey}`)
+              }
+
+              return key
+            })
+          }
+
+          const dynamicMatches = flattenThemeKeys(config.theme[themeKey])
+            .map(key => {
+              return className.replace(`{${themeKey}}`, key)
+            })
+            .concat(_.trim(className.replace(`{${themeKey}}`, ''), config.separator))
+
+          return dynamicMatches
+        })
+
+        return allMatches
       },
       ...config.purge.options,
     }),
