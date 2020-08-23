@@ -2,7 +2,6 @@ import _ from 'lodash'
 import postcss from 'postcss'
 import purgecss from '@fullhuman/postcss-purgecss'
 import log from '../util/log'
-import flattenColorPalette from '../util/flattenColorPalette'
 
 function removeTailwindMarkers(css) {
   css.walkAtRules('tailwind', rule => rule.remove())
@@ -99,7 +98,9 @@ export default function purgeUnusedUtilities(config, configChanged) {
             })
           }
 
-          const dynamicMatches = flattenThemeKeys(config.theme[themeKey])
+          const dynamicMatches = flattenThemeKeys(
+            _.get(config, ['theme', ...themeKey.split('.')], [])
+          )
             .map(key => {
               return className.replace(`{${themeKey}}`, key)
             })
