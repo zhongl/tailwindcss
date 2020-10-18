@@ -3,7 +3,12 @@ import chalk from 'chalk'
 import log from './util/log'
 
 const featureFlags = {
-  future: ['defaultLineHeights', 'standardFontWeights', 'moveTruncateToTextOverflow'],
+  future: [
+    'purgeLayersByDefault',
+    'defaultLineHeights',
+    'standardFontWeights',
+    'moveTruncateToTextOverflow',
+  ],
   experimental: [
     'uniformColorPalette',
     'extendedSpacingScale',
