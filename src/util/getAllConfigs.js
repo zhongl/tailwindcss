@@ -1,5 +1,6 @@
 import defaultConfig from '../../stubs/defaultConfig.stub.js'
 import { flagEnabled } from '../featureFlags'
+import extendedSpacingScale from '../flagged/extendedSpacingScale.js'
 import extendedFontSizeScale from '../flagged/extendedFontSizeScale.js'
 import additionalBreakpoint from '../flagged/additionalBreakpoint'
 import { flatMap, get } from 'lodash'
@@ -10,6 +11,7 @@ export default function getAllConfigs(config, defaultPresets = [defaultConfig]) 
   })
 
   const features = {
+    extendedSpacingScale,
     extendedFontSizeScale,
     additionalBreakpoint,
   }
