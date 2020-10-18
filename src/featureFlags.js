@@ -4,6 +4,7 @@ import log from './util/log'
 
 const featureFlags = {
   future: [
+    'removeDeprecatedGapUtilities',
     'purgeLayersByDefault',
     'defaultLineHeights',
     'standardFontWeights',
