@@ -4,7 +4,9 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   purge: [],
-  presets: [],
+  prefix: '',
+  important: false,
+  separator: ':',
   theme: {
     screens: {
       sm: '640px',
@@ -816,5 +818,6 @@ module.exports = {
     transitionDelay: ['responsive'],
     animation: ['responsive'],
   },
+  corePlugins: {},
   plugins: [],
 }
