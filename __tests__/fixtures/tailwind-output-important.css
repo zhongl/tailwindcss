@@ -9606,11 +9606,11 @@ video {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 
-.font-thin {
+.font-hairline {
   font-weight: 100 !important;
 }
 
-.font-extralight {
+.font-thin {
   font-weight: 200 !important;
 }
 
@@ -9642,11 +9642,11 @@ video {
   font-weight: 900 !important;
 }
 
-.hover\:font-thin:hover {
+.hover\:font-hairline:hover {
   font-weight: 100 !important;
 }
 
-.hover\:font-extralight:hover {
+.hover\:font-thin:hover {
   font-weight: 200 !important;
 }
 
@@ -9678,11 +9678,11 @@ video {
   font-weight: 900 !important;
 }
 
-.focus\:font-thin:focus {
+.focus\:font-hairline:focus {
   font-weight: 100 !important;
 }
 
-.focus\:font-extralight:focus {
+.focus\:font-thin:focus {
   font-weight: 200 !important;
 }
 
@@ -26954,11 +26954,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   }
 
-  .sm\:font-thin {
+  .sm\:font-hairline {
     font-weight: 100 !important;
   }
 
-  .sm\:font-extralight {
+  .sm\:font-thin {
     font-weight: 200 !important;
   }
 
@@ -26990,11 +26990,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .sm\:hover\:font-thin:hover {
+  .sm\:hover\:font-hairline:hover {
     font-weight: 100 !important;
   }
 
-  .sm\:hover\:font-extralight:hover {
+  .sm\:hover\:font-thin:hover {
     font-weight: 200 !important;
   }
 
@@ -27026,11 +27026,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .sm\:focus\:font-thin:focus {
+  .sm\:focus\:font-hairline:focus {
     font-weight: 100 !important;
   }
 
-  .sm\:focus\:font-extralight:focus {
+  .sm\:focus\:font-thin:focus {
     font-weight: 200 !important;
   }
 
@@ -44272,11 +44272,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   }
 
-  .md\:font-thin {
+  .md\:font-hairline {
     font-weight: 100 !important;
   }
 
-  .md\:font-extralight {
+  .md\:font-thin {
     font-weight: 200 !important;
   }
 
@@ -44308,11 +44308,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .md\:hover\:font-thin:hover {
+  .md\:hover\:font-hairline:hover {
     font-weight: 100 !important;
   }
 
-  .md\:hover\:font-extralight:hover {
+  .md\:hover\:font-thin:hover {
     font-weight: 200 !important;
   }
 
@@ -44344,11 +44344,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .md\:focus\:font-thin:focus {
+  .md\:focus\:font-hairline:focus {
     font-weight: 100 !important;
   }
 
-  .md\:focus\:font-extralight:focus {
+  .md\:focus\:font-thin:focus {
     font-weight: 200 !important;
   }
 
@@ -61590,11 +61590,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   }
 
-  .lg\:font-thin {
+  .lg\:font-hairline {
     font-weight: 100 !important;
   }
 
-  .lg\:font-extralight {
+  .lg\:font-thin {
     font-weight: 200 !important;
   }
 
@@ -61626,11 +61626,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .lg\:hover\:font-thin:hover {
+  .lg\:hover\:font-hairline:hover {
     font-weight: 100 !important;
   }
 
-  .lg\:hover\:font-extralight:hover {
+  .lg\:hover\:font-thin:hover {
     font-weight: 200 !important;
   }
 
@@ -61662,11 +61662,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .lg\:focus\:font-thin:focus {
+  .lg\:focus\:font-hairline:focus {
     font-weight: 100 !important;
   }
 
-  .lg\:focus\:font-extralight:focus {
+  .lg\:focus\:font-thin:focus {
     font-weight: 200 !important;
   }
 
@@ -78908,11 +78908,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   }
 
-  .xl\:font-thin {
+  .xl\:font-hairline {
     font-weight: 100 !important;
   }
 
-  .xl\:font-extralight {
+  .xl\:font-thin {
     font-weight: 200 !important;
   }
 
@@ -78944,11 +78944,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .xl\:hover\:font-thin:hover {
+  .xl\:hover\:font-hairline:hover {
     font-weight: 100 !important;
   }
 
-  .xl\:hover\:font-extralight:hover {
+  .xl\:hover\:font-thin:hover {
     font-weight: 200 !important;
   }
 
@@ -78980,11 +78980,11 @@ video {
     font-weight: 900 !important;
   }
 
-  .xl\:focus\:font-thin:focus {
+  .xl\:focus\:font-hairline:focus {
     font-weight: 100 !important;
   }
 
-  .xl\:focus\:font-extralight:focus {
+  .xl\:focus\:font-thin:focus {
     font-weight: 200 !important;
   }
 

@@ -9606,11 +9606,11 @@ video {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.font-thin {
+.font-hairline {
   font-weight: 100;
 }
 
-.font-extralight {
+.font-thin {
   font-weight: 200;
 }
 
@@ -9642,11 +9642,11 @@ video {
   font-weight: 900;
 }
 
-.hover\:font-thin:hover {
+.hover\:font-hairline:hover {
   font-weight: 100;
 }
 
-.hover\:font-extralight:hover {
+.hover\:font-thin:hover {
   font-weight: 200;
 }
 
@@ -9678,11 +9678,11 @@ video {
   font-weight: 900;
 }
 
-.focus\:font-thin:focus {
+.focus\:font-hairline:focus {
   font-weight: 100;
 }
 
-.focus\:font-extralight:focus {
+.focus\:font-thin:focus {
   font-weight: 200;
 }
 
@@ -26954,11 +26954,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .sm\:font-thin {
+  .sm\:font-hairline {
     font-weight: 100;
   }
 
-  .sm\:font-extralight {
+  .sm\:font-thin {
     font-weight: 200;
   }
 
@@ -26990,11 +26990,11 @@ video {
     font-weight: 900;
   }
 
-  .sm\:hover\:font-thin:hover {
+  .sm\:hover\:font-hairline:hover {
     font-weight: 100;
   }
 
-  .sm\:hover\:font-extralight:hover {
+  .sm\:hover\:font-thin:hover {
     font-weight: 200;
   }
 
@@ -27026,11 +27026,11 @@ video {
     font-weight: 900;
   }
 
-  .sm\:focus\:font-thin:focus {
+  .sm\:focus\:font-hairline:focus {
     font-weight: 100;
   }
 
-  .sm\:focus\:font-extralight:focus {
+  .sm\:focus\:font-thin:focus {
     font-weight: 200;
   }
 
@@ -44272,11 +44272,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .md\:font-thin {
+  .md\:font-hairline {
     font-weight: 100;
   }
 
-  .md\:font-extralight {
+  .md\:font-thin {
     font-weight: 200;
   }
 
@@ -44308,11 +44308,11 @@ video {
     font-weight: 900;
   }
 
-  .md\:hover\:font-thin:hover {
+  .md\:hover\:font-hairline:hover {
     font-weight: 100;
   }
 
-  .md\:hover\:font-extralight:hover {
+  .md\:hover\:font-thin:hover {
     font-weight: 200;
   }
 
@@ -44344,11 +44344,11 @@ video {
     font-weight: 900;
   }
 
-  .md\:focus\:font-thin:focus {
+  .md\:focus\:font-hairline:focus {
     font-weight: 100;
   }
 
-  .md\:focus\:font-extralight:focus {
+  .md\:focus\:font-thin:focus {
     font-weight: 200;
   }
 
@@ -61590,11 +61590,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .lg\:font-thin {
+  .lg\:font-hairline {
     font-weight: 100;
   }
 
-  .lg\:font-extralight {
+  .lg\:font-thin {
     font-weight: 200;
   }
 
@@ -61626,11 +61626,11 @@ video {
     font-weight: 900;
   }
 
-  .lg\:hover\:font-thin:hover {
+  .lg\:hover\:font-hairline:hover {
     font-weight: 100;
   }
 
-  .lg\:hover\:font-extralight:hover {
+  .lg\:hover\:font-thin:hover {
     font-weight: 200;
   }
 
@@ -61662,11 +61662,11 @@ video {
     font-weight: 900;
   }
 
-  .lg\:focus\:font-thin:focus {
+  .lg\:focus\:font-hairline:focus {
     font-weight: 100;
   }
 
-  .lg\:focus\:font-extralight:focus {
+  .lg\:focus\:font-thin:focus {
     font-weight: 200;
   }
 
@@ -78908,11 +78908,11 @@ video {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
-  .xl\:font-thin {
+  .xl\:font-hairline {
     font-weight: 100;
   }
 
-  .xl\:font-extralight {
+  .xl\:font-thin {
     font-weight: 200;
   }
 
@@ -78944,11 +78944,11 @@ video {
     font-weight: 900;
   }
 
-  .xl\:hover\:font-thin:hover {
+  .xl\:hover\:font-hairline:hover {
     font-weight: 100;
   }
 
-  .xl\:hover\:font-extralight:hover {
+  .xl\:hover\:font-thin:hover {
     font-weight: 200;
   }
 
@@ -78980,11 +78980,11 @@ video {
     font-weight: 900;
   }
 
-  .xl\:focus\:font-thin:focus {
+  .xl\:focus\:font-hairline:focus {
     font-weight: 100;
   }
 
-  .xl\:focus\:font-extralight:focus {
+  .xl\:focus\:font-thin:focus {
     font-weight: 200;
   }
 
