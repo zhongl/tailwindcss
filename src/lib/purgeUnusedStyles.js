@@ -3,6 +3,7 @@ import postcss from 'postcss'
 import purgecss from '@fullhuman/postcss-purgecss'
 import log from '../util/log'
 import htmlTags from 'html-tags'
+import { flagEnabled } from '../featureFlags'
 
 function removeTailwindMarkers(css) {
   css.walkAtRules('tailwind', (rule) => rule.remove())
