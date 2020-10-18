@@ -477,11 +477,6 @@ test('you can apply the container component', () => {
         max-width: 1280px;
       }
     }
-    @media (min-width: 1536px) {
-      .foo {
-        max-width: 1536px;
-      }
-    }
   `
 
   expect.assertions(2)
